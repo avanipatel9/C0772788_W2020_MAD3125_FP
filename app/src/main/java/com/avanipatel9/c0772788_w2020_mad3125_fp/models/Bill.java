@@ -12,7 +12,7 @@ public abstract class Bill {
     String billID;
     Date billDate;
     BillType billType;
-    double totalBillAmount;
+    double billAmount;
 
     public Bill(String billID, Date billDate, BillType billType) {
         this.billID = billID;
@@ -44,11 +44,11 @@ public abstract class Bill {
         this.billType = billType;
     }
 
-    public double getTotalBillAmount() {
-        return totalBillAmount;
+    public double getBillAmount() {
+        return billAmount;
     }
 
-    public void setTotalBillAmount(double totalBillAmount) {
-        this.totalBillAmount = totalBillAmount;
+    public void setBillAmount(double billAmount) {
+        this.billAmount = billAmount;
     }
 }

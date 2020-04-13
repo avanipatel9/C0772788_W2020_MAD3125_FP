@@ -10,6 +10,7 @@ public class Customer {
     private String fullName;
     private String emailID;
     private Dictionary<String, Bill> billDictionary;
+    private Double totalBillToPay = 0.0;
 
     public Customer(String customerID, String firstName, String lastName, String fullName, String emailID) {
         this.customerID = customerID;
@@ -61,5 +62,17 @@ public class Customer {
 
     public void setBillDictionary(Dictionary<String, Bill> billDictionary) {
         this.billDictionary = billDictionary;
+    }
+
+    public void addBill(Bill bill, String billId)
+    {
+        billDictionary.put(billId, bill);
+        this.totalBillToPay = this.totalBillToPay + bill.billAmount;
+    }
+
+    public void removeBill(Bill bill, String billID)
+    {
+        billDictionary.remove(billID);
+        System.out.println("Bill removed with ID " + billID);
     }
 }
