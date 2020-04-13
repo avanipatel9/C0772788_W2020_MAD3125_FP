@@ -9,4 +9,13 @@ public class Customer {
     private String lastName;
     private String fullName;
     private String emailID;
+    private Dictionary<String, Bill> billDictionary;
+
+    public Customer(String customerID, String firstName, String lastName, String fullName, String emailID) {
+        this.customerID = customerID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = fullName;
+        this.emailID = emailID;
+    }
 }
