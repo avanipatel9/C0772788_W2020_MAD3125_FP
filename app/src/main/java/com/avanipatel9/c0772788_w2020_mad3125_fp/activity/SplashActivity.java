@@ -1,4 +1,4 @@
-package com.avanipatel9.c0772788_w2020_mad3125_fp;
+package com.avanipatel9.c0772788_w2020_mad3125_fp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

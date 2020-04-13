@@ -1,10 +1,11 @@
-package com.avanipatel9.c0772788_w2020_mad3125_fp;
+package com.avanipatel9.c0772788_w2020_mad3125_fp.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;

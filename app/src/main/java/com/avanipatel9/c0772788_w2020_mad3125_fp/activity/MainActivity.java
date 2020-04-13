@@ -1,8 +1,10 @@
-package com.avanipatel9.c0772788_w2020_mad3125_fp;
+package com.avanipatel9.c0772788_w2020_mad3125_fp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
 
 public class MainActivity extends AppCompatActivity {
 
