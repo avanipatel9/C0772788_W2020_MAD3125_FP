@@ -64,6 +64,10 @@ public class Customer {
         this.billDictionary = billDictionary;
     }
 
+    public Double getTotalBillToPay() {
+        return totalBillToPay;
+    }
+
     public void addBill(Bill bill, String billId)
     {
         billDictionary.put(billId, bill);
