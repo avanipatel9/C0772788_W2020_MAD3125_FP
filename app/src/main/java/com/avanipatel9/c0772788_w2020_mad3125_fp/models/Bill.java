@@ -19,4 +19,36 @@ public abstract class Bill {
         this.billDate = billDate;
         this.billType = billType;
     }
+
+    public String getBillID() {
+        return billID;
+    }
+
+    public void setBillID(String billID) {
+        this.billID = billID;
+    }
+
+    public Date getBillDate() {
+        return billDate;
+    }
+
+    public void setBillDate(Date billDate) {
+        this.billDate = billDate;
+    }
+
+    public BillType getBillType() {
+        return billType;
+    }
+
+    public void setBillType(BillType billType) {
+        this.billType = billType;
+    }
+
+    public double getTotalBillAmount() {
+        return totalBillAmount;
+    }
+
+    public void setTotalBillAmount(double totalBillAmount) {
+        this.totalBillAmount = totalBillAmount;
+    }
 }
