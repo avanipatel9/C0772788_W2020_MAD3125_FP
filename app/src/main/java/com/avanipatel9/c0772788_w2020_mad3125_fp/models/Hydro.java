@@ -13,6 +13,22 @@ public class Hydro extends Bill {
         this.unitsConsumed = unitsConsumed;
     }
 
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
+    public int getUnitsConsumed() {
+        return unitsConsumed;
+    }
+
+    public void setUnitsConsumed(int unitsConsumed) {
+        this.unitsConsumed = unitsConsumed;
+    }
+
     @Override
     public Double calculateBill() {
         return null;
