@@ -11,6 +11,7 @@ public class Hydro extends Bill {
         super(billID, billDate, billType);
         this.agencyName = agencyName;
         this.unitsConsumed = unitsConsumed;
+        this.billAmount = calculateBill();
     }
 
     public String getAgencyName() {
@@ -31,6 +32,7 @@ public class Hydro extends Bill {
 
     @Override
     public Double calculateBill() {
-        return null;
+        this.billAmount = Double.valueOf(unitsConsumed) * 20.0;
+        return this.billAmount;
     }
 }
