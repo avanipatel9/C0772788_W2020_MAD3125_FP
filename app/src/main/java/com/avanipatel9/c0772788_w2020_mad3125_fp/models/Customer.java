@@ -18,4 +18,48 @@ public class Customer {
         this.fullName = fullName;
         this.emailID = emailID;
     }
+
+    public String getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    public String getEmailID() {
+        return emailID;
+    }
+
+    public void setEmailID(String emailID) {
+        this.emailID = emailID;
+    }
+
+    public Dictionary<String, Bill> getBillDictionary() {
+        return billDictionary;
+    }
+
+    public void setBillDictionary(Dictionary<String, Bill> billDictionary) {
+        this.billDictionary = billDictionary;
+    }
 }
