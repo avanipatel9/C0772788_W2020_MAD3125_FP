@@ -51,4 +51,6 @@ public abstract class Bill {
     public void setBillAmount(double billAmount) {
         this.billAmount = billAmount;
     }
+
+    public abstract Double calculateBill();
 }

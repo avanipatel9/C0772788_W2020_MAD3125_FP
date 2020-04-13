@@ -10,6 +10,7 @@ public class Internet extends Bill {
         super(billID, billDate, billType);
         this.internetProviderName = internetProviderName;
         this.internetGBUsed = internetGBUsed;
+        this.billAmount = calculateBill();
     }
 
     public String getInternetProviderName() {
@@ -26,5 +27,11 @@ public class Internet extends Bill {
 
     public void setInternetGBUsed(Double internetGBUsed) {
         this.internetGBUsed = internetGBUsed;
+    }
+
+    @Override
+    public Double calculateBill() {
+        this.billAmount = internetGBUsed * 3.5;
+        return this.billAmount;
     }
 }
