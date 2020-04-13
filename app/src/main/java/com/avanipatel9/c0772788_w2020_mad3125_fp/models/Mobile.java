@@ -19,6 +19,46 @@ public class Mobile extends Bill {
         this.minutesUsed = minutesUsed;
     }
 
+    public String getMobileManufacturerName() {
+        return mobileManufacturerName;
+    }
+
+    public void setMobileManufacturerName(String mobileManufacturerName) {
+        this.mobileManufacturerName = mobileManufacturerName;
+    }
+
+    public String getPlanName() {
+        return planName;
+    }
+
+    public void setPlanName(String planName) {
+        this.planName = planName;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public int getMobileGBUsed() {
+        return mobileGBUsed;
+    }
+
+    public void setMobileGBUsed(int mobileGBUsed) {
+        this.mobileGBUsed = mobileGBUsed;
+    }
+
+    public int getMinutesUsed() {
+        return minutesUsed;
+    }
+
+    public void setMinutesUsed(int minutesUsed) {
+        this.minutesUsed = minutesUsed;
+    }
+
     @Override
     public Double calculateBill() {
         return null;
