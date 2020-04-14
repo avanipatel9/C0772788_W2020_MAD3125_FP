@@ -11,11 +11,10 @@ public class Customer {
     private Dictionary<String, Bill> billDictionary;
     private Double totalBillToPay = 0.0;
 
-    public Customer(String customerID, String firstName, String lastName, String fullName, String emailID) {
+    public Customer(String customerID, String firstName, String lastName, String emailID) {
         this.customerID = customerID;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.fullName = fullName;
         this.emailID = emailID;
     }
 
