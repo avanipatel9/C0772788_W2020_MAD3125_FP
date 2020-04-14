@@ -16,18 +16,6 @@ import butterknife.InjectView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @InjectView(R.id.edt_email)
-    TextInputEditText edtEmail;
-    @InjectView(R.id.txt_email)
-    TextInputLayout txtEmail;
-    @InjectView(R.id.edt_password)
-    TextInputEditText edtPassword;
-    @InjectView(R.id.txt_password)
-    TextInputLayout txtPassword;
-    @InjectView(R.id.switchRememberMe)
-    SwitchMaterial switchRememberMe;
-    @InjectView(R.id.btn_go_next)
-    MaterialButton btnGoNext;
 
     private SharedPreferences loginPreferences;
     private SharedPreferences.Editor loginPrefsEditor;
@@ -37,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
-        getSupportActionBar().setTitle("Login");
+        getSupportActionBar().hide();
 
         loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();
