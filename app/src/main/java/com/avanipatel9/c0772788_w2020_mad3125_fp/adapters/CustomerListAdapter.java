@@ -40,6 +40,7 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
 
         Customer mCustomer = this.customerArrayList.get(position);
         holder.txtCustomerName.setText(mCustomer.getFullName());
+        holder.txtEmail.setText(mCustomer.getEmailID());
         holder.txtTotalBill.setText(String.valueOf(mCustomer.getTotalBillToPay()));
         holder.imgCustomer.setImageResource(R.drawable.customers);
 
@@ -65,6 +66,7 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
     {
         TextView txtCustomerName;
         TextView txtTotalBill;
+        TextView txtEmail;
         ImageView imgCustomer;
 
 
@@ -72,6 +74,7 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
             super(itemView);
 
             this.txtCustomerName = itemView.findViewById(R.id.txt_customer_name);
+            this.txtEmail = itemView.findViewById(R.id.txt_email);
             this.txtTotalBill = itemView.findViewById(R.id.txt_total_bill);
             this.imgCustomer = itemView.findViewById(R.id.img_customer);
         }
