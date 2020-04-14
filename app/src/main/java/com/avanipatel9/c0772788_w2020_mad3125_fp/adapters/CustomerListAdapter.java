@@ -41,7 +41,7 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
         Customer mCustomer = this.customerArrayList.get(position);
         holder.txtCustomerName.setText(mCustomer.getFullName());
         holder.txtTotalBill.setText(String.valueOf(mCustomer.getTotalBillToPay()));
-        holder.imgCustomer.setImageResource(R.drawable.login);
+        holder.imgCustomer.setImageResource(R.drawable.customers);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

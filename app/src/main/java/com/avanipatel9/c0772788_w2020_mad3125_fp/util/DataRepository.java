@@ -2,7 +2,10 @@ package com.avanipatel9.c0772788_w2020_mad3125_fp.util;
 
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Dictionary;
+import java.util.HashMap;
 
 public class DataRepository {
 
@@ -14,10 +17,16 @@ public class DataRepository {
 
     private DataRepository(){ }
 
-    private Dictionary<String, Customer> customerDictionary;
+    private HashMap<String, Customer> customerHashMap = new HashMap<>();
 
-    public Dictionary<String, Customer> getCustomerDictionary() {
-        return this.customerDictionary;
+    public HashMap<String, Customer> getCustomerHashMap() {
+        return this.customerHashMap;
+    }
+
+    public ArrayList<Customer> getAllCustomers()
+    {
+        Collection<Customer> tempCustomerList = customerHashMap.values();
+        return new ArrayList<>(tempCustomerList);
     }
 
     public void loadData()
@@ -28,10 +37,10 @@ public class DataRepository {
         Customer c4 = new Customer("C004", "Kashyap", "Zaveri", "kashyap@gmail.com");
         Customer c5 = new Customer("C005", "Monika", "Sharma", "monika@gmail.com");
 
-        customerDictionary.put(c1.getCustomerID(), c1);
-        customerDictionary.put(c2.getCustomerID(), c2);
-        customerDictionary.put(c3.getCustomerID(), c3);
-        customerDictionary.put(c4.getCustomerID(), c4);
-        customerDictionary.put(c5.getCustomerID(), c5);
+        customerHashMap.put(c1.getCustomerID(), c1);
+        customerHashMap.put(c2.getCustomerID(), c2);
+        customerHashMap.put(c3.getCustomerID(), c3);
+        customerHashMap.put(c4.getCustomerID(), c4);
+        customerHashMap.put(c5.getCustomerID(), c5);
     }
 }
