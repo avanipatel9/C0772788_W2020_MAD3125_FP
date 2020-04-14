@@ -41,6 +41,7 @@
             android:id="@+id/username">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
@@ -59,6 +60,7 @@
             android:id="@+id/password">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -82,6 +84,7 @@
                 android:paddingStart="5dp"
                 android:text="Remember Me"/>
             <Switch
+                android:id="@+id/switch_remember_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp" />
@@ -91,9 +94,10 @@
 
 
         <Button
+            android:id="@+id/btn_go_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Next"
             android:textColor="@android:color/white"
             android:background="@color/color2"
             android:layout_marginTop="30dp"/>
