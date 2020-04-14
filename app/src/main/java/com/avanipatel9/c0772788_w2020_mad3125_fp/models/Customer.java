@@ -3,6 +3,9 @@ package com.avanipatel9.c0772788_w2020_mad3125_fp.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Dictionary;
 import java.util.HashMap;
 
@@ -81,6 +84,12 @@ public class Customer implements Parcelable {
     {
         billHashMap.remove(billID);
         System.out.println("Bill removed with ID " + billID);
+    }
+
+    public ArrayList<Bill> getBillsArray()
+    {
+        Collection<Bill> tempBills = billHashMap.values();
+        return new ArrayList<>(tempBills);
     }
 
     @Override
