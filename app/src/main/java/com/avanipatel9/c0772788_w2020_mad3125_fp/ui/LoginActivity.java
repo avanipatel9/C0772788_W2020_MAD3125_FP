@@ -1,4 +1,4 @@
-package com.avanipatel9.c0772788_w2020_mad3125_fp.activity;
+package com.avanipatel9.c0772788_w2020_mad3125_fp.ui;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
+        getSupportActionBar().setTitle("Login");
 
         loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();

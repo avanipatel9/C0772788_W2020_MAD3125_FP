@@ -1,4 +1,4 @@
-package com.avanipatel9.c0772788_w2020_mad3125_fp.activity;
+package com.avanipatel9.c0772788_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
