@@ -1,14 +1,18 @@
 package com.avanipatel9.c0772788_w2020_mad3125_fp.models;
 
-import java.util.Dictionary;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Customer {
+import java.util.Dictionary;
+import java.util.HashMap;
+
+public class Customer implements Parcelable {
     private String customerID;
     private String firstName;
     private String lastName;
     private String fullName;
     private String emailID;
-    private Dictionary<String, Bill> billDictionary;
+    private HashMap<String, Bill> billHashMap = new HashMap<String, Bill>();
     private Double totalBillToPay = 0.0;
 
     public Customer(String customerID, String firstName, String lastName, String emailID) {
@@ -54,13 +58,14 @@ public class Customer {
         this.emailID = emailID;
     }
 
-    public Dictionary<String, Bill> getBillDictionary() {
-        return billDictionary;
+    public HashMap<String, Bill> getBillHashMap() {
+        return billHashMap;
     }
 
-    public void setBillDictionary(Dictionary<String, Bill> billDictionary) {
-        this.billDictionary = billDictionary;
+    public void setBillHashMap(HashMap<String, Bill> billHashMap) {
+        this.billHashMap = billHashMap;
     }
+
 
     public Double getTotalBillToPay() {
         return totalBillToPay;
@@ -68,13 +73,51 @@ public class Customer {
 
     public void addBill(Bill bill, String billId)
     {
-        billDictionary.put(billId, bill);
+        billHashMap.put(billId, bill);
         this.totalBillToPay = this.totalBillToPay + bill.billAmount;
     }
 
     public void removeBill(Bill bill, String billID)
     {
-        billDictionary.remove(billID);
+        billHashMap.remove(billID);
         System.out.println("Bill removed with ID " + billID);
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.customerID);
+        dest.writeString(this.firstName);
+        dest.writeString(this.lastName);
+        dest.writeString(this.fullName);
+        dest.writeString(this.emailID);
+        dest.writeMap(this.billHashMap);
+        dest.writeValue(this.totalBillToPay);
+    }
+
+    protected Customer(Parcel in) {
+        this.customerID = in.readString();
+        this.firstName = in.readString();
+        this.lastName = in.readString();
+        this.fullName = in.readString();
+        this.emailID = in.readString();
+        this.billHashMap = in.readHashMap(Bill.class.getClassLoader());
+        this.totalBillToPay = (Double) in.readValue(Double.class.getClassLoader());
+    }
+
+    public static final Creator<Customer> CREATOR = new Creator<Customer>() {
+        @Override
+        public Customer createFromParcel(Parcel source) {
+            return new Customer(source);
+        }
+
+        @Override
+        public Customer[] newArray(int size) {
+            return new Customer[size];
+        }
+    };
 }
