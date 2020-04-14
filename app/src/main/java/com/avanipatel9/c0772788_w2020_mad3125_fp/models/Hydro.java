@@ -32,7 +32,7 @@ public class Hydro extends Bill {
 
     @Override
     public Double calculateBill() {
-        this.billAmount = Double.valueOf(unitsConsumed) * 20.0;
+        this.billAmount = (double) unitsConsumed * 20.0;
         return this.billAmount;
     }
 }

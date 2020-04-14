@@ -17,6 +17,7 @@ public class Mobile extends Bill {
         this.mobileNumber = mobileNumber;
         this.mobileGBUsed = mobileGBUsed;
         this.minutesUsed = minutesUsed;
+        this.billAmount = calculateBill();
     }
 
     public String getMobileManufacturerName() {
@@ -61,6 +62,7 @@ public class Mobile extends Bill {
 
     @Override
     public Double calculateBill() {
-        return null;
+        this.billAmount = ((double) this.minutesUsed * 0.50) + ((double) this.mobileGBUsed * 7.5);
+        return this.billAmount;
     }
 }
