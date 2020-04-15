@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ShowBillDetailsActivity"></activity>
+        <activity android:name=".ui.AddNewMobileBillActivity"></activity>
+        <activity android:name=".ui.AddNewInternetBillActivity" />
+        <activity android:name=".ui.AddNewHydroBillActivity" />
+        <activity android:name=".ui.ShowBillDetailsActivity" />
         <activity android:name=".ui.AddNewCustomerActivity" />
         <activity android:name=".ui.CustomerListActivity" />
         <activity android:name=".ui.LoginActivity" />
