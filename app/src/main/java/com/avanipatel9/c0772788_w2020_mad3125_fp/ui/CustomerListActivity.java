@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -27,7 +28,7 @@ public class CustomerListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
-        getSupportActionBar().setTitle("List of Customers");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'> List Of Customers </font>"));
 
         DataRepository dataRepository = DataRepository.getInstance();
         dataRepository.loadData();

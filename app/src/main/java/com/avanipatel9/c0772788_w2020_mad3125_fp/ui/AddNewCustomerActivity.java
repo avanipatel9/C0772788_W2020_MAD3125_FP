@@ -2,6 +2,7 @@ package com.avanipatel9.c0772788_w2020_mad3125_fp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +43,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_customer);
         ButterKnife.inject(this);
-        getSupportActionBar().setTitle("Add New Customer");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'> Add New Customer </font>"));
 
         btnSaveCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
