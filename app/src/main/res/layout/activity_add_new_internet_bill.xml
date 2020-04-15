@@ -7,7 +7,7 @@
     tools:context=".ui.AddNewInternetBillActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bill_id"
+        android:id="@+id/bill_id_internet"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,13 +20,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_bill_id"
+            android:id="@+id/edt_bill_id_internet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bill_date"
+        android:id="@+id/bill_date_internet"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,10 +36,10 @@
         android:hint="Bill Date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bill_id">
+        app:layout_constraintTop_toBottomOf="@+id/bill_id_internet">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_bill_date"
+            android:id="@+id/edt_bill_date_internet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -56,7 +56,7 @@
         android:hint="Internet Provider Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bill_date">
+        app:layout_constraintTop_toBottomOf="@+id/bill_date_internet">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_internet_provider_name"
