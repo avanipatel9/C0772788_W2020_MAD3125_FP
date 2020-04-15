@@ -42,6 +42,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_customer);
         ButterKnife.inject(this);
+        getSupportActionBar().setTitle("Add New Customer");
 
         btnSaveCustomer.setOnClickListener(new View.OnClickListener() {
             @Override

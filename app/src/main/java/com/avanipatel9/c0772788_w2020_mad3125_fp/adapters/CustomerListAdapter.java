@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
-
-import org.w3c.dom.Text;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -50,7 +49,7 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
                 Customer mCustomer = customerArrayList.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("customerKey", mCustomer);
-                Intent mIntent = new Intent();
+                Intent mIntent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
                 mIntent.putExtras(bundle);
                 holder.itemView.getContext().startActivity(mIntent);
             }
