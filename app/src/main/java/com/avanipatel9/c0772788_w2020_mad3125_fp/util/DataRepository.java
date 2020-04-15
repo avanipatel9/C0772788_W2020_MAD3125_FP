@@ -29,6 +29,11 @@ public class DataRepository {
         return new ArrayList<>(tempCustomerList);
     }
 
+    public void addCustomer(Customer customer)
+    {
+        this.customerHashMap.put(customer.getCustomerID(), customer);
+    }
+
     public void loadData()
     {
         Customer c1 = new Customer("C001", "Charmi", "Patel", "charmi@gmail.com");
