@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btn_logout"
+        android:title="Logout"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/btn_add_new_bill"
+        android:title="Add Bill"
+        app:showAsAction="never">
+    <menu>
+        <item
+            android:id="@+id/btn_add_new_hydro_bill"
+            android:title="Hydro"/>
+        <item
+            android:id="@+id/btn_add_new_internet_bill"
+            android:title="Internet"/>
+        <item
+            android:id="@+id/btn_add_new_mobile_bill"
+            android:title="Mobile"/>
+    </menu>
+    </item>
+</menu>
