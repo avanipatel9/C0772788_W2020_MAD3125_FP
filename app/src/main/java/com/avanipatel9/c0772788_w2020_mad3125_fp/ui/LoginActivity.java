@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                     AlertDialog.Builder alert = new AlertDialog.Builder(LoginActivity.this);
                     alert.setCancelable(false);
                     alert.setTitle("Login Error");
-                    alert.setMessage("Invalid User ID and Password");
+                    alert.setMessage("Invalid User ID and/or Password");
                     alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
