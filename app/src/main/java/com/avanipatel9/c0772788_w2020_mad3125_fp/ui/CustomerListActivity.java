@@ -16,6 +16,7 @@ import com.avanipatel9.c0772788_w2020_mad3125_fp.adapters.CustomerListAdapter;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.util.DataRepository;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class CustomerListActivity extends AppCompatActivity {
@@ -31,7 +32,11 @@ public class CustomerListActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'> List Of Customers </font>"));
 
         DataRepository dataRepository = DataRepository.getInstance();
-        dataRepository.loadData();
+        try {
+            dataRepository.loadData();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         customers = dataRepository.getAllCustomers();
 
         rvCustomerList = findViewById(R.id.rv_customer_list);
