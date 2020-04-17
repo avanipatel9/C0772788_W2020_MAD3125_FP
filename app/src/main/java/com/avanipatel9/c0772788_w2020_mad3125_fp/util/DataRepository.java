@@ -53,6 +53,9 @@ public class DataRepository {
         Internet i2 = new Internet("NET002", sdf.parse("2018-12-17"), Bill.BillType.Internet, "Roger", 300.0);
         Internet i3 = new Internet("NET003", sdf.parse("2020-01-31"), Bill.BillType.Internet, "Roger", 250.0);
 
+        Mobile m1 = new Mobile("MOB001", sdf.parse("2019-01-20"), Bill.BillType.Mobile, "Galaxy Samsung", "Prepaid Talk + Text plan", "+1(467)-345-6789", 5, 356);
+        Mobile m2 = new Mobile("MOB002", sdf.parse("2018-08-15"), Bill.BillType.Mobile, "Apple", "Prepaid + Text plan", "6471234567", 2, 250);
+
         Customer c1 = new Customer("C001", "Charmi", "Patel", "charmi@gmail.com");
         c1.addBill(h1, h1.getBillID());
         Customer c2 = new Customer("C002", "Jyothi", "Thomas", "jyothi@gmail.com");
