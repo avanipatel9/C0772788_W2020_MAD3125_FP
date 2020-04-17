@@ -49,6 +49,10 @@ public class DataRepository {
         Hydro h2 = new Hydro("HYD002", sdf.parse("2019-10-12"), Bill.BillType.Hydro, "Planet Energy", 50);
         Hydro h3 = new Hydro("HYD003", sdf.parse("2018-04-21"), Bill.BillType.Hydro, "Planet Energy", 60);
 
+        Internet i1 = new Internet("NET001", sdf.parse("2018-07-29"), Bill.BillType.Internet, "Bell", 500.0);
+        Internet i2 = new Internet("NET002", sdf.parse("2018-12-17"), Bill.BillType.Internet, "Roger", 300.0);
+        Internet i3 = new Internet("NET003", sdf.parse("2020-01-31"), Bill.BillType.Internet, "Roger", 250.0);
+
         Customer c1 = new Customer("C001", "Charmi", "Patel", "charmi@gmail.com");
         c1.addBill(h1, h1.getBillID());
         Customer c2 = new Customer("C002", "Jyothi", "Thomas", "jyothi@gmail.com");
