@@ -58,8 +58,14 @@ public class DataRepository {
 
         Customer c1 = new Customer("C001", "Charmi", "Patel", "charmi@gmail.com");
         c1.addBill(h1, h1.getBillID());
+        c1.addBill(i1, i1.getBillID());
         Customer c2 = new Customer("C002", "Jyothi", "Thomas", "jyothi@gmail.com");
+        c2.addBill(i2, i2.getBillID());
+        c2.addBill(i3, i3.getBillID());
+        c2.addBill(m2, m2.getBillID());
+        c2.addBill(h3, h3.getBillID());
         Customer c3 = new Customer("C003", "Shreya", "Vaghasiya", "shreya@gmail.com");
+        c3.addBill(h2, h2.getBillID());
         Customer c4 = new Customer("C004", "Kashyap", "Zaveri", "kashyap@gmail.com");
         Customer c5 = new Customer("C005", "Monika", "Sharma", "monika@gmail.com");
 
