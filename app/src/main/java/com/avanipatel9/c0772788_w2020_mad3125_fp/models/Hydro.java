@@ -1,5 +1,8 @@
 package com.avanipatel9.c0772788_w2020_mad3125_fp.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Date;
 
 public class Hydro extends Bill {
@@ -35,4 +38,35 @@ public class Hydro extends Bill {
         this.billAmount = (double) unitsConsumed * 20.0;
         return this.billAmount;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.agencyName);
+        dest.writeInt(this.unitsConsumed);
+    }
+
+    protected Hydro(Parcel in) {
+        super(in);
+        this.agencyName = in.readString();
+        this.unitsConsumed = in.readInt();
+    }
+
+    public static final Creator<Hydro> CREATOR = new Creator<Hydro>() {
+        @Override
+        public Hydro createFromParcel(Parcel source) {
+            return new Hydro(source);
+        }
+
+        @Override
+        public Hydro[] newArray(int size) {
+            return new Hydro[size];
+        }
+    };
 }

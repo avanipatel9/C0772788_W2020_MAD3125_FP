@@ -2,6 +2,7 @@ package com.avanipatel9.c0772788_w2020_mad3125_fp.adapters;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Bill;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 
@@ -47,10 +49,12 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
             @Override
             public void onClick(View v) {
                 Customer mCustomer = customerArrayList.get(position);
+                ArrayList<Bill> bills = mCustomer.getBillsArray();
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("customerKey", mCustomer);
                 Intent mIntent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
                 mIntent.putExtras(bundle);
+                mIntent.putParcelableArrayListExtra("bills", (ArrayList<? extends Parcelable>) bills);
                 holder.itemView.getContext().startActivity(mIntent);
             }
         });

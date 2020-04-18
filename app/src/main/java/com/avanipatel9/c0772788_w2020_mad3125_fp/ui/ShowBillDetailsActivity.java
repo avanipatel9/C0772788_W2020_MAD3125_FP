@@ -2,6 +2,8 @@ package com.avanipatel9.c0772788_w2020_mad3125_fp.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +12,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.adapters.BillListAdapter;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Bill;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.util.DataRepository;
+
+import java.text.ParseException;
+import java.util.ArrayList;
 
 public class ShowBillDetailsActivity extends AppCompatActivity {
+
+    private RecyclerView rvBillList;
+    private Customer customer;
+    private ArrayList<Bill> billArrayList;
+    private BillListAdapter billListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +33,22 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_bill_details);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'> Bill Details </font>"));
 
+        DataRepository dataRepository = DataRepository.getInstance();
+        try {
+            dataRepository.loadData();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Intent intent = getIntent();
+        customer = intent.getParcelableExtra("customerKey");
+        billArrayList = intent.getParcelableArrayListExtra("bills");
+        rvBillList = findViewById(R.id.rv_bill_list);
+        billListAdapter = new BillListAdapter(billArrayList);
 
+        RecyclerView.LayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        rvBillList.setLayoutManager(mLinearLayoutManager);
+
+        rvBillList.setAdapter(billListAdapter);
     }
 
     @Override

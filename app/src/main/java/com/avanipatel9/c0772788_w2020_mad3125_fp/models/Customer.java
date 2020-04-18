@@ -16,6 +16,7 @@ public class Customer implements Parcelable {
     private String fullName;
     private String emailID;
     private HashMap<String, Bill> billHashMap = new HashMap<String, Bill>();
+    private ArrayList<Bill> billArrayList;
     private Double totalBillToPay = 0.0;
 
     public Customer(String customerID, String firstName, String lastName, String emailID) {
@@ -89,7 +90,8 @@ public class Customer implements Parcelable {
     public ArrayList<Bill> getBillsArray()
     {
         Collection<Bill> tempBills = billHashMap.values();
-        return new ArrayList<>(tempBills);
+        this.billArrayList = new ArrayList<>(tempBills);
+        return billArrayList;
     }
 
     @Override
@@ -105,6 +107,7 @@ public class Customer implements Parcelable {
         dest.writeString(this.fullName);
         dest.writeString(this.emailID);
         dest.writeMap(this.billHashMap);
+        dest.writeArray(new ArrayList[]{this.billArrayList});
         dest.writeValue(this.totalBillToPay);
     }
 
@@ -115,6 +118,7 @@ public class Customer implements Parcelable {
         this.fullName = in.readString();
         this.emailID = in.readString();
         this.billHashMap = in.readHashMap(Bill.class.getClassLoader());
+        this.billArrayList = in.readArrayList(Bill.class.getClassLoader());
         this.totalBillToPay = (Double) in.readValue(Double.class.getClassLoader());
     }
 

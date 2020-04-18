@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Bill;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Hydro;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Internet;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Mobile;
 
 import java.util.ArrayList;
 
@@ -39,14 +42,15 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
         Bill mBill = this.billArrayList.get(position);
         if(mBill.getBillID().contains("HYD"))
         {
+            Hydro mHydro = (Hydro) mBill;
             holder.imgBill.setImageResource(R.drawable.hydro1);
             holder.txtBillDate.setText(mBill.getBillDate().toString());
             holder.txtBillType.setText(mBill.getBillType().toString());
             holder.txtManufacturerName.setText("Agency Name");
-            //holder.txtValManufacturerName.setText(mBill);
+            holder.txtValManufacturerName.setText((mHydro.getAgencyName()));
             holder.txtPlanName.setText("Units Consumed");
-            //holder.txtValPlanName.setText(mBill.ge);
-            holder.txtBillAmount.setText(String.format("%f", mBill.getBillAmount()));
+            holder.txtValPlanName.setText(String.valueOf(mHydro.getUnitsConsumed()));
+            holder.txtBillAmount.setText(String.format("%2f", mBill.getBillAmount()));
 
             holder.ll5Bill.setVisibility(View.INVISIBLE);
             holder.ll6Bill.setVisibility(View.INVISIBLE);
@@ -55,15 +59,34 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
 
         else if(mBill.getBillID().contains("NET"))
         {
+            Internet mInternet = (Internet) mBill;
             holder.imgBill.setImageResource(R.drawable.wifi1);
             holder.ll5Bill.setVisibility(View.INVISIBLE);
             holder.ll6Bill.setVisibility(View.INVISIBLE);
             holder.ll7Bill.setVisibility(View.INVISIBLE);
+            holder.txtBillDate.setText(mInternet.getBillDate().toString());
+            holder.txtBillType.setText(mInternet.getBillType().toString());
+            holder.txtManufacturerName.setText("Internet Provider Name");
+            holder.txtValManufacturerName.setText(mInternet.getInternetProviderName());
+            holder.txtPlanName.setText("Internet GB Used");
+            holder.txtValPlanName.setText(String.valueOf(mInternet.getInternetGBUsed()));
+            holder.txtBillAmount.setText(String.format("%2f", mInternet.getBillAmount()));
         }
 
         else
         {
             holder.imgBill.setImageResource(R.drawable.mobile1);
+            Mobile mMobile = (Mobile) mBill;
+            holder.txtBillDate.setText(mMobile.getBillDate().toString());
+            holder.txtBillType.setText(mMobile.getBillType().toString());
+            holder.txtManufacturerName.setText("Manufacturer Name");
+            holder.txtValManufacturerName.setText(mMobile.getMobileManufacturerName());
+            holder.txtPlanName.setText("Plan Name");
+            holder.txtValPlanName.setText(mMobile.getPlanName());
+            holder.txtMobileNumber.setText(mMobile.getMobileNumber());
+            holder.txtInternetGBUsed.setText(String.valueOf(mMobile.getMobileGBUsed()));
+            holder.txtMinutesUsed.setText(String.valueOf(mMobile.getMinutesUsed()));
+            holder.txtBillAmount.setText(String.format("%2f", mMobile.getBillAmount()));
         }
 
 
@@ -71,7 +94,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
 
     @Override
     public int getItemCount() {
-        return 0;
+        return billArrayList.size();
     }
 
     public class BillViewHolder extends RecyclerView.ViewHolder {
