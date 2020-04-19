@@ -58,5 +58,38 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                 picker.show();
             }
         });
+
+        btnSaveNewInternetBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(edtBillIdInternet.getText().toString().isEmpty() && edtBillDateInternet.getText().toString().isEmpty() && edtInternetProviderName.getText().toString().isEmpty() && edtInternetGbUsed.getText().toString().isEmpty())
+                {
+                    edtBillIdInternet.setError("Please Enter Bill ID");
+                    edtBillDateInternet.setError("Please Enter Bill Date");
+                    edtInternetProviderName.setError("Please Enter Internet Provider Name");
+                    edtInternetGbUsed.setError("Please Enter Internet GB Used");
+                }
+                else if(edtBillIdInternet.getText().toString().isEmpty())
+                {
+                    edtBillIdInternet.setError("Please Enter Bill ID");
+                }
+                else if(!edtBillIdInternet.getText().toString().contains("NET"))
+                {
+                    edtBillIdInternet.setError("Bill ID should start with 'NET'");
+                }
+                else if(edtBillDateInternet.getText().toString().isEmpty())
+                {
+                    edtBillDateInternet.setError("Please Enter Bill Date");
+                }
+                else if(edtInternetProviderName.getText().toString().isEmpty())
+                {
+                    edtInternetProviderName.setError("Please Enter Internet Provider Name");
+                }
+                else if(edtInternetGbUsed.getText().toString().isEmpty())
+                {
+                    edtInternetGbUsed.setError("Please Enter Internet GB Used");
+                }
+            }
+        });
     }
 }
