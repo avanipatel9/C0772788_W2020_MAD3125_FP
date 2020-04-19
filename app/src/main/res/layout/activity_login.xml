@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -38,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:id="@+id/username">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -57,6 +59,7 @@
             android:layout_height="wrap_content"
             app:errorEnabled="true"
             app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:id="@+id/password">
 
             <com.google.android.material.textfield.TextInputEditText
