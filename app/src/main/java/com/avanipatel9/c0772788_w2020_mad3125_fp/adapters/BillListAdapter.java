@@ -19,10 +19,12 @@ import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Internet;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Mobile;
 
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillViewHolder> {
 
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
     ArrayList<Bill> billArrayList;
     NumberFormat format = NumberFormat.getCurrencyInstance();
 
@@ -47,7 +49,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
         {
             Hydro mHydro = (Hydro) mBill;
             holder.imgBill.setImageResource(R.drawable.hydro1);
-            holder.txtBillDate.setText(mHydro.getBillDate().toString());
+            holder.txtBillDate.setText(sdf.format(mHydro.getBillDate()));
             holder.txtBillType.setText(mHydro.getBillType().toString());
             holder.txtBillAmount.setText(format.format(mHydro.getBillAmount()));
             holder.txtAgencyName.setText(mHydro.getAgencyName());
@@ -63,7 +65,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
             Internet mInternet = (Internet) mBill;
             holder.imgBill.setImageResource(R.drawable.wifi1);
 
-            holder.txtBillDate.setText(mInternet.getBillDate().toString());
+            holder.txtBillDate.setText(sdf.format(mInternet.getBillDate()));
             holder.txtBillType.setText(mInternet.getBillType().toString());
             holder.txtBillAmount.setText(format.format(mInternet.getBillAmount()));
             holder.txtInternetProviderName.setText(mInternet.getInternetProviderName());
@@ -78,7 +80,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
         {
             holder.imgBill.setImageResource(R.drawable.mobile1);
             Mobile mMobile = (Mobile) mBill;
-            holder.txtBillDate.setText(mMobile.getBillDate().toString());
+            holder.txtBillDate.setText(sdf.format(mMobile.getBillDate()));
             holder.txtBillType.setText(mMobile.getBillType().toString());
             holder.txtBillAmount.setText(format.format(mMobile.getBillAmount()));
             holder.txtManufacturerName.setText(mMobile.getMobileManufacturerName());
