@@ -17,11 +17,13 @@ import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Bill;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapter.CustomerViewHolder> {
 
     ArrayList<Customer> customerArrayList;
+    NumberFormat format = NumberFormat.getCurrencyInstance();
 
     public CustomerListAdapter(ArrayList<Customer> customerArrayList) {
         this.customerArrayList = customerArrayList;
@@ -42,7 +44,7 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
         Customer mCustomer = this.customerArrayList.get(position);
         holder.txtCustomerName.setText(mCustomer.getFullName());
         holder.txtEmail.setText(mCustomer.getEmailID());
-        holder.txtTotalBill.setText(String.valueOf(mCustomer.getTotalBillToPay()));
+        holder.txtTotalBill.setText("Total Bill to Pay : " + format.format(mCustomer.getTotalBillToPay()));
         holder.imgCustomer.setImageResource(R.drawable.customers);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

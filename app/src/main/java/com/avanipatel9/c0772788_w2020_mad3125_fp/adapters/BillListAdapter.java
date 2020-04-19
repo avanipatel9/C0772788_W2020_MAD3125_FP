@@ -47,7 +47,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
         if(mBill.getBillID().contains("HYD"))
         {
             Hydro mHydro = (Hydro) mBill;
-            holder.imgBill.setImageResource(R.drawable.hydro1);
+            holder.imgBill.setImageResource(R.drawable.electricity);
             holder.txtBillDate.setText(sdf.format(mHydro.getBillDate()));
             holder.txtBillType.setText(mHydro.getBillType().toString());
             holder.txtBillAmount.setText(format.format(mHydro.getBillAmount()));
@@ -62,7 +62,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
         else if(mBill.getBillID().contains("NET"))
         {
             Internet mInternet = (Internet) mBill;
-            holder.imgBill.setImageResource(R.drawable.wifi1);
+            holder.imgBill.setImageResource(R.drawable.wifi);
 
             holder.txtBillDate.setText(sdf.format(mInternet.getBillDate()));
             holder.txtBillType.setText(mInternet.getBillType().toString());
@@ -77,7 +77,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
 
         else if(mBill.getBillID().contains("MOB"))
         {
-            holder.imgBill.setImageResource(R.drawable.mobile1);
+            holder.imgBill.setImageResource(R.drawable.mobile);
             Mobile mMobile = (Mobile) mBill;
             holder.txtBillDate.setText(sdf.format(mMobile.getBillDate()));
             holder.txtBillType.setText(mMobile.getBillType().toString());
