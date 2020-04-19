@@ -62,6 +62,7 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_mobile_bill);
         ButterKnife.inject(this);
         getSupportActionBar().setTitle(Html.fromHtml("<font color= '#FFFFFF'> Add Mobile Bill </font>"));
+        getSupportActionBar().setElevation(0);
 
         edtBillDateMobile.setInputType(InputType.TYPE_NULL);
         edtBillDateMobile.setOnClickListener(new View.OnClickListener() {

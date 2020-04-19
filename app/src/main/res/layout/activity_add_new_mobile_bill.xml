@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.AddNewMobileBillActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.github.florent37.shapeofview.shapes.ArcView
+        android:id="@+id/arc_view"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:elevation="5.0dp"
+        app:shape_arc_cropDirection="outside"
+        app:shape_arc_height="35dp"
+        app:shape_arc_position="bottom">
 
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp" />
+
+    </com.github.florent37.shapeofview.shapes.ArcView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:clipToPadding="false"
+    android:elevation="50dp">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/bill_id_mobile"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Bill ID"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:hint="Bill ID">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_bill_id_mobile"
@@ -33,10 +56,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Bill Date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bill_id_mobile">
+        android:hint="Bill Date">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_bill_date_mobile"
@@ -53,10 +73,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Mobile Manufacturer Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bill_date_mobile">
+        android:hint="Mobile Manufacturer Name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_mobile_manufacturer_name"
@@ -72,10 +89,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Plan Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mobile_manufacturer_name">
+        android:hint="Plan Name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_plan_name"
@@ -91,10 +105,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Mobile Number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plan_name">
+        android:hint="Mobile Number">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_mobile_number"
@@ -111,10 +122,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Mobile GB Used"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mobile_number">
+        android:hint="Mobile GB Used">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_mobile_gb_used"
@@ -131,10 +139,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Minutes Used"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mobile_gb_used">
+        android:hint="Minutes Used">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_minutes_used"
@@ -149,8 +154,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/minutes_used" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
