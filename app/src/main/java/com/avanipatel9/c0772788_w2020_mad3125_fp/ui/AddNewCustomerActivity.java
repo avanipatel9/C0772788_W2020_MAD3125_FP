@@ -44,6 +44,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_customer);
         ButterKnife.inject(this);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'> Add New Customer </font>"));
+        getSupportActionBar().setElevation(0);
 
         btnSaveCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
