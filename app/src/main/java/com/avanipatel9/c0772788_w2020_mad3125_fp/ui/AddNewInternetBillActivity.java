@@ -54,6 +54,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_internet_bill);
         ButterKnife.inject(this);
         getSupportActionBar().setTitle(Html.fromHtml("<font color= '#FFFFFF'> Add Internet Bill </font>"));
+        getSupportActionBar().setElevation(0);
 
         edtBillDateInternet.setInputType(InputType.TYPE_NULL);
         edtBillDateInternet.setOnClickListener(new View.OnClickListener() {
