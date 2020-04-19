@@ -58,6 +58,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
         ButterKnife.inject(this);
 
         getSupportActionBar().setTitle(Html.fromHtml("<font color= '#FFFFFF'> Add Hydro Bill </font>"));
+        getSupportActionBar().setElevation(0);
 
         edtBillDateHydro.setInputType(InputType.TYPE_NULL);
         edtBillDateHydro.setOnClickListener(new View.OnClickListener() {
