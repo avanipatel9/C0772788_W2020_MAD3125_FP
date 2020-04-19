@@ -31,8 +31,6 @@ import butterknife.InjectView;
 
 public class AddNewHydroBillActivity extends AppCompatActivity {
 
-    SimpleDateFormat sdf1 = new SimpleDateFormat("dd-M-yyyy");
-
     @InjectView(R.id.edt_bill_id_hydro)
     TextInputEditText edtBillIdHydro;
     @InjectView(R.id.edt_bill_date_hydro)
@@ -44,6 +42,8 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
     @InjectView(R.id.btn_save_new_hydro_bill)
     MaterialButton btnSaveNewHydroBill;
     Customer customer;
+
+    SimpleDateFormat sdf1 = new SimpleDateFormat("dd-M-yyyy");
 
     private DatePickerDialog picker;
     final Calendar calendar = Calendar.getInstance();

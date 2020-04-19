@@ -1,6 +1,7 @@
 package com.avanipatel9.c0772788_w2020_mad3125_fp.ui;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.InputType;
@@ -9,10 +10,15 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Bill;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Hydro;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Internet;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import butterknife.ButterKnife;
@@ -32,6 +38,8 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     MaterialButton btnSaveNewInternetBill;
 
     Customer customer;
+
+    SimpleDateFormat sdf1 = new SimpleDateFormat("dd-M-yyyy");
 
     private DatePickerDialog picker;
     final Calendar calendar = Calendar.getInstance();
@@ -88,6 +96,24 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                 else if(edtInternetGbUsed.getText().toString().isEmpty())
                 {
                     edtInternetGbUsed.setError("Please Enter Internet GB Used");
+                }
+                else
+                {
+                    Intent mIntent;
+                    try {
+                        Internet internet = new Internet(edtBillIdInternet.getText().toString(), sdf1.parse(edtBillDateInternet.getText().toString()), Bill.BillType.Internet, edtInternetProviderName.getText().toString(), Double.valueOf(edtInternetGbUsed.getText().toString()));
+                        mIntent = getIntent();
+                        customer = mIntent.getParcelableExtra("customerKey");
+                        customer.addBill(internet, internet.getBillID());
+                        Bundle bundle = new Bundle();
+                        bundle.putParcelable("customerKey", customer);
+                        mIntent = new Intent(AddNewInternetBillActivity.this, ShowBillDetailsActivity.class);
+                        mIntent.putExtras(bundle);
+                        mIntent.putParcelableArrayListExtra("bills", customer.getBillsArray());
+                        startActivity(mIntent);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
