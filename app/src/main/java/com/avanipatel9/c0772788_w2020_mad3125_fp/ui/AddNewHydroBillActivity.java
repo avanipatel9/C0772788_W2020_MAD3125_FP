@@ -1,9 +1,12 @@
 package com.avanipatel9.c0772788_w2020_mad3125_fp.ui;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.InputType;
 import android.view.View;
+import android.widget.DatePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,9 +19,12 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -26,6 +32,7 @@ import butterknife.InjectView;
 public class AddNewHydroBillActivity extends AppCompatActivity {
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
+    SimpleDateFormat sdf1 = new SimpleDateFormat("dd-M-yyyy");
 
     @InjectView(R.id.edt_bill_id_hydro)
     TextInputEditText edtBillIdHydro;
@@ -47,6 +54,12 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
     MaterialButton btnSaveNewHydroBill;
     Customer customer;
 
+    private DatePickerDialog picker;
+    final Calendar calendar = Calendar.getInstance();
+    final int day = calendar.get(Calendar.DAY_OF_MONTH);
+    final int month = calendar.get(Calendar.MONTH);
+    final int year = calendar.get(Calendar.YEAR);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +67,18 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
         ButterKnife.inject(this);
 
         getSupportActionBar().setTitle(Html.fromHtml("<font color= '#FFFFFF'> Add Hydro Bill </font>"));
+
+        edtBillDateHydro.setInputType(InputType.TYPE_NULL);
+        edtBillDateHydro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // date picker dialog
+                picker = new DatePickerDialog(AddNewHydroBillActivity.this,
+                        (view, year, monthOfYear, dayOfMonth) -> edtBillDateHydro.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year), year, month, day);
+                picker.show();
+            }
+        });
 
         btnSaveNewHydroBill.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +110,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 {
                     Intent mIntent;
                     try {
-                        Hydro hydro = new Hydro(edtBillIdHydro.getText().toString(), sdf.parse(edtBillDateHydro.getText().toString()), Bill.BillType.Hydro, edtAgencyName.getText().toString(), Integer.parseInt(edtUnitsConsumed.getText().toString()));
+                        Hydro hydro = new Hydro(edtBillIdHydro.getText().toString(), sdf1.parse(edtBillDateHydro.getText().toString()), Bill.BillType.Hydro, edtAgencyName.getText().toString(), Integer.parseInt(edtUnitsConsumed.getText().toString()));
                         mIntent = getIntent();
                         customer = mIntent.getParcelableExtra("customerKey");
                         customer.addBill(hydro, hydro.getBillID());
