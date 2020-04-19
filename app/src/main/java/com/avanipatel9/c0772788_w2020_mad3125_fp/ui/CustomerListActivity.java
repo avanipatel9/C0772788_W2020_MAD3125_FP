@@ -30,6 +30,7 @@ public class CustomerListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'> List Of Customers </font>"));
+        getSupportActionBar().setElevation(0);
 
         DataRepository dataRepository = DataRepository.getInstance();
         try {

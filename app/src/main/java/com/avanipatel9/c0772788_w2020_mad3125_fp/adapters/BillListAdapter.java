@@ -43,7 +43,6 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
 
     @Override
     public void onBindViewHolder(@NonNull BillViewHolder holder, int position) {
-
         Bill mBill = this.billArrayList.get(position);
         if(mBill.getBillID().contains("HYD"))
         {
@@ -53,10 +52,10 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
             holder.txtBillType.setText(mHydro.getBillType().toString());
             holder.txtBillAmount.setText(format.format(mHydro.getBillAmount()));
             holder.txtAgencyName.setText(mHydro.getAgencyName());
-            holder.txtUnitsConsumed.setText(String.format("%d units", mHydro.getUnitsConsumed()));
+            holder.txtUnitsConsumed.setText(String.format("%d Units", mHydro.getUnitsConsumed()));
 
-            holder.llMobile.setVisibility(View.INVISIBLE);
-            holder.llInternet.setVisibility(View.INVISIBLE);
+            holder.llMobile.setVisibility(View.GONE);
+            holder.llInternet.setVisibility(View.GONE);
 
         }
 
@@ -69,10 +68,10 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
             holder.txtBillType.setText(mInternet.getBillType().toString());
             holder.txtBillAmount.setText(format.format(mInternet.getBillAmount()));
             holder.txtInternetProviderName.setText(mInternet.getInternetProviderName());
-            holder.txtInternetGBUsed.setText(mInternet.getInternetGBUsed() + "GB");
+            holder.txtInternetGBUsed.setText(mInternet.getInternetGBUsed() + " GB");
 
-            holder.llHydro.setVisibility(View.INVISIBLE);
-            holder.llMobile.setVisibility(View.INVISIBLE);
+            holder.llHydro.setVisibility(View.GONE);
+            holder.llMobile.setVisibility(View.GONE);
 
         }
 
@@ -86,17 +85,17 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
             holder.txtManufacturerName.setText(mMobile.getMobileManufacturerName());
             holder.txtPlanName.setText(mMobile.getPlanName());
             holder.txtMobileNumber.setText(mMobile.getMobileNumber());
-            holder.txtMobileGBUsed.setText(mMobile.getMobileGBUsed() + "GB");
-            holder.txtMinutesUsed.setText(mMobile.getMinutesUsed() + "Minutes");
+            holder.txtMobileGBUsed.setText(mMobile.getMobileGBUsed() + " GB");
+            holder.txtMinutesUsed.setText(mMobile.getMinutesUsed() + " Minutes");
 
-            holder.llHydro.setVisibility(View.INVISIBLE);
-            holder.llInternet.setVisibility(View.INVISIBLE);
+            holder.llHydro.setVisibility(View.GONE);
+            holder.llInternet.setVisibility(View.GONE);
 
         }
         else
         {
             holder.txtTotalBillToPay.setText("This Customer has no bills");
-            holder.cardView.setVisibility(View.INVISIBLE);
+            holder.cardView.setVisibility(View.GONE);
         }
 
 
