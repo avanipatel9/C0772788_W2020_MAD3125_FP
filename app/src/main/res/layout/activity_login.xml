@@ -7,30 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".ui.LoginActivity">
 
-    <LinearLayout
+
+
+    <com.github.florent37.shapeofview.shapes.ArcView
+        android:id="@+id/arc_view"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:id="@+id/header"
-        android:orientation="vertical"
-        android:background="@drawable/header">
+        android:layout_height="200dp"
+        android:elevation="5.0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shape_arc_cropDirection="outside"
+        app:shape_arc_height="35dp"
+        app:shape_arc_position="bottom">
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Login"
-            android:textStyle="bold"
-            android:textSize="55sp"
-            android:fontFamily="cursive"
-            android:textColor="@android:color/white"/>
+            android:layout_height="200dp"
+            android:background="@drawable/header"
+            android:elevation="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:gravity="center"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:textSize="55sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
 
-    </LinearLayout>
+
+
+    </com.github.florent37.shapeofview.shapes.ArcView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_below="@id/header"
+        android:layout_below="@id/arc_view"
         android:padding="15dp"
         android:layout_marginTop="40dp"
         android:gravity="center_horizontal">
@@ -107,10 +122,4 @@
             android:layout_marginTop="30dp"/>
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="245dp"
-        android:background="@drawable/login"/>
 </RelativeLayout>
