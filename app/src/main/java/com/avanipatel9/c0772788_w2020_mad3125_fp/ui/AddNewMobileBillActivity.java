@@ -1,6 +1,7 @@
 package com.avanipatel9.c0772788_w2020_mad3125_fp.ui;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.InputType;
@@ -9,10 +10,14 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.avanipatel9.c0772788_w2020_mad3125_fp.R;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Bill;
 import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Customer;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Internet;
+import com.avanipatel9.c0772788_w2020_mad3125_fp.models.Mobile;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -78,7 +83,7 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                     edtBillIdMobile.setError("Please Enter Bill ID");
                     edtBillDateMobile.setError("Please Enter Bill Date");
                     edtMobileManufacturerName.setError("Please Enter Mobile Manufacturer Name");
-                    edtPlanName.setError("Please Enter Internet GB Used");
+                    edtPlanName.setError("Please Enter Plan Name");
                     edtMobileNumber.setError("Please Enter Mobile Number");
                     edtMinutesUsed.setError("Please Enter Minutes Used");
                     edtMobileGbUsed.setError("Please Enter Internet GB Used");
@@ -114,6 +119,24 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                 else if(edtMobileGbUsed.getText().toString().isEmpty())
                 {
                     edtMobileGbUsed.setError("Please Enter Internet GB Used");
+                }
+                else
+                {
+                    Intent mIntent;
+                    try {
+                        Mobile mobile = new Mobile(edtBillIdMobile.getText().toString(), sdf1.parse(edtBillDateMobile.getText().toString()), Bill.BillType.Mobile, edtMobileManufacturerName.getText().toString(), edtPlanName.getText().toString(), edtMobileNumber.getText().toString(), Integer.parseInt(edtMobileGbUsed.getText().toString()), Integer.parseInt(edtMinutesUsed.getText().toString()));
+                        mIntent = getIntent();
+                        customer = mIntent.getParcelableExtra("customerKey");
+                        customer.addBill(mobile, mobile.getBillID());
+                        Bundle bundle = new Bundle();
+                        bundle.putParcelable("customerKey", customer);
+                        mIntent = new Intent(AddNewMobileBillActivity.this, ShowBillDetailsActivity.class);
+                        mIntent.putExtras(bundle);
+                        mIntent.putParcelableArrayListExtra("bills", customer.getBillsArray());
+                        startActivity(mIntent);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
