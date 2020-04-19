@@ -59,21 +59,23 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent mIntent;
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("customerKey", customer);
         switch (item.getItemId())
         {
             case R.id.btn_add_new_hydro_bill:
                 mIntent = new Intent(ShowBillDetailsActivity.this, AddNewHydroBillActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putParcelable("customerKey", customer);
                 mIntent.putExtras(bundle);
                 startActivity(mIntent);
                 break;
             case R.id.btn_add_new_internet_bill:
                 mIntent = new Intent(ShowBillDetailsActivity.this, AddNewInternetBillActivity.class);
+                mIntent.putExtras(bundle);
                 startActivity(mIntent);
                 break;
             case R.id.btn_add_new_mobile_bill:
                 mIntent = new Intent(ShowBillDetailsActivity.this, AddNewMobileBillActivity.class);
+                mIntent.putExtras(bundle);
                 startActivity(mIntent);
                 break;
             case R.id.btn_logout:

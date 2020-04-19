@@ -31,7 +31,6 @@ import butterknife.InjectView;
 
 public class AddNewHydroBillActivity extends AppCompatActivity {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
     SimpleDateFormat sdf1 = new SimpleDateFormat("dd-M-yyyy");
 
     @InjectView(R.id.edt_bill_id_hydro)
@@ -93,6 +92,10 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 else if(edtBillIdHydro.getText().toString().isEmpty())
                 {
                     edtBillIdHydro.setError("Please Enter Bill ID");
+                }
+                else if(!edtBillIdHydro.getText().toString().contains("HYD"))
+                {
+                    edtBillIdHydro.setError("Bill ID should start with HYD");
                 }
                 else if(edtBillDateHydro.getText().toString().isEmpty())
                 {
