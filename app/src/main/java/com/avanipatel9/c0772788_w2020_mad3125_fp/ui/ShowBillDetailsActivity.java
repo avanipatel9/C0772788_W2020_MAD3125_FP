@@ -63,6 +63,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         {
             case R.id.btn_add_new_hydro_bill:
                 mIntent = new Intent(ShowBillDetailsActivity.this, AddNewHydroBillActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("customerKey", customer);
+                mIntent.putExtras(bundle);
                 startActivity(mIntent);
                 break;
             case R.id.btn_add_new_internet_bill:
