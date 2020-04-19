@@ -32,6 +32,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'> Bill Details </font>"));
+        getSupportActionBar().setElevation(0);
 
         DataRepository dataRepository = DataRepository.getInstance();
         try {
