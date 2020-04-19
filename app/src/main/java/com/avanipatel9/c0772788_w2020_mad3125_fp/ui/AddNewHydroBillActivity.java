@@ -35,20 +35,12 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
 
     @InjectView(R.id.edt_bill_id_hydro)
     TextInputEditText edtBillIdHydro;
-    @InjectView(R.id.bill_id_hydro)
-    TextInputLayout billIdHydro;
     @InjectView(R.id.edt_bill_date_hydro)
     TextInputEditText edtBillDateHydro;
-    @InjectView(R.id.bill_date_hydro)
-    TextInputLayout billDateHydro;
     @InjectView(R.id.edt_agency_name)
     TextInputEditText edtAgencyName;
-    @InjectView(R.id.agency_name)
-    TextInputLayout agencyName;
     @InjectView(R.id.edt_units_consumed)
     TextInputEditText edtUnitsConsumed;
-    @InjectView(R.id.units_consumed)
-    TextInputLayout unitsConsumed;
     @InjectView(R.id.btn_save_new_hydro_bill)
     MaterialButton btnSaveNewHydroBill;
     Customer customer;
