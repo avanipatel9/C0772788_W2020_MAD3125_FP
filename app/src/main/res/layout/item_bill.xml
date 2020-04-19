@@ -2,193 +2,397 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:cardCornerRadius="4dp">
-    <LinearLayout
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:layout_margin="5dp"
+        android:background="#EEEDEF"
+        app:cardCornerRadius="4dp">
 
-        <ImageView
-            android:id="@+id/image_bill"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_vertical"/>
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_bill"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/ll_1_bill"
-                android:layout_width="match_parent"
+                android:id="@+id/ll1_bill"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/image_bill"
+                app:layout_constraintTop_toTopOf="parent"
+                android:weightSum="2">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_bill_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bill Amount"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_val_bill_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="bill amount"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textAlignment="viewEnd"
+                android:paddingRight="10dp"
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll2_bill"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/image_bill"
+                app:layout_constraintTop_toBottomOf="@+id/ll1_bill"
+                android:weightSum="2">
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Bill Date"
-                android:layout_weight="1"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_val_bill_date"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_val_bill_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="bill date"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textAlignment="viewEnd"
+                android:paddingRight="10dp"/>
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_2_bill"
-                android:layout_width="match_parent"
+                android:id="@+id/ll3_bill"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/image_bill"
+                app:layout_constraintTop_toBottomOf="@+id/ll2_bill"
+                android:weightSum="2">
+
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Bill Type"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:paddingLeft="10dp"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/txt_val_bill_type"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
+                    android:text="bill type"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textAlignment="viewEnd"
+                    android:paddingRight="10dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_bill_hydro"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/image_bill"
+                app:layout_constraintTop_toBottomOf="@+id/ll3_bill"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+                <LinearLayout
+                    android:id="@+id/ll_hydro_1"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Agency Name"
+                        android:layout_weight="1"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_agency_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="agency name"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_hydro_2"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Units Consumed"
+                        android:layout_weight="1"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_units_consumed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="units"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_3_bill"
-                android:layout_width="match_parent"
+                android:id="@+id/ll_bill_internet"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_manufacturer_name"
-                    android:layout_width="0dp"
+                app:layout_constraintStart_toEndOf="@id/image_bill"
+                app:layout_constraintTop_toBottomOf="@+id/ll3_bill"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+                <LinearLayout
+                    android:id="@+id/ll_internet_1"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:text="Manufacturer Name"
-                    android:layout_weight="1"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_val_manufacturer_name"
-                    android:layout_width="0dp"
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Internet Provider"
+                        android:layout_weight="1"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_internet_provider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Internet Provider"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_internet_2"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Internet GB Used"
+                        android:layout_weight="1"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_internet_gb_used"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="gb"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_4_bill"
-                android:layout_width="match_parent"
+                android:id="@+id/ll_bill_Mobile"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_plan_name"
-                    android:layout_width="0dp"
+                app:layout_constraintStart_toEndOf="@id/image_bill"
+                app:layout_constraintTop_toBottomOf="@+id/ll3_bill"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+                <LinearLayout
+                    android:id="@+id/ll_mobile_1"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:text="Plan Name"
-                    android:layout_weight="1"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_val_plan_name"
-                    android:layout_width="0dp"
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Manufacturer Name"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_manufacturer_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Manufacturer"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_mobile_2"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Plan Name"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_plan_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="plan name"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_mobile_3"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Number"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_mobile_number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mobile number"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_mobile_4"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="GB Used"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_mobile_gb_used"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="gb used"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_mobile_5"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Minutes Used"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:paddingLeft="10dp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txt_val_minutes_used"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="minutes"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textAlignment="viewEnd"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_5_bill"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_mobile_number"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Mobile Number"
-                    android:layout_weight="1"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_val_mobile_number"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_6_bill"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Internet GB Used"
-                    android:layout_weight="1"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_val_mobile_gb_used"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_7_bill"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Minutes Used"
-                    android:layout_weight="1"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_val_minutes_used"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_8_bill"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:padding="8dp">
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="Bill Amount"
-                    android:layout_weight="1"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_val_bill_amount"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-
-        </LinearLayout>
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
