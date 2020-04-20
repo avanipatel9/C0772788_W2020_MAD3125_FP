@@ -20,6 +20,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -121,6 +123,10 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                 {
                     edtMobileGbUsed.setError("Please Enter Internet GB Used");
                 }
+                else if (!isValidPhone(edtMobileNumber.getText().toString()))
+                {
+                    edtMobileNumber.setError("Enter valid 10-digit Mobile Number");
+                }
                 else
                 {
                     Intent mIntent;
@@ -141,5 +147,12 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private Boolean isValidPhone(String phone)
+    {
+        Pattern pattern = Pattern.compile("^(?:\\+?1[-.●]?)?\\(?([0-9]{3})\\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$");
+        Matcher matcher = pattern.matcher(phone);
+        return matcher.matches();
     }
 }

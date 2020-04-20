@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.view.animation.Animation
-import android.widget.ImageView
 import com.avanipatel9.c0772788_w2020_mad3125_fp.R
 
 class SplashScreenActivity : AppCompatActivity() {
-    
+
     // This is the loading time of the splash screen
     private val SPLASH_TIME_OUT:Long = 6000 // 2 sec
 
