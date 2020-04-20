@@ -24,3 +24,10 @@
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/Bill_details_1.png)|Bill list continued|
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/customer_with_no_bills.png)|Customer with no bills|
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/Add_Bill_menu.png)|Add New Bill Menu|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/adding_hydro_bill.png)|Add New Hydro Bill with empty fields validations, datepicker, bill id validation|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/datePicker.png)|Date Picker for selecting Bill Date|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/Add_new_internet_bill.png)|Add New Internet Bill with empty fields validations, datepicker, bill id validation|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/Add_new_mobile_bill.png)|Add new Mobile Bill with empty fields validations, datepicker, bill id validation and phone number validation|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/phone_validation.png)|Phone Number Validation|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/adding_mobile_bill_correct_inputs.png)|Addnig new Mobile bill with correct details |
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/newly_added_mobile_bill.png)|Newly added Mobile bill will be displayed in the bill list after successful addition of it |
