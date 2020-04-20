@@ -20,3 +20,5 @@
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/email_validation.png)|Email validation|
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/new_customer_correct_inputs.png)|Addnig new Customer with correct details|
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/newly_added_customer_list.png)|Customer List with newly added Customer|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/Bill_details.png)|By Clicking a customer, it will display bill details of that customer with grand total |
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/Bill_details_1.png)|Bill list continued|
