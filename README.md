@@ -54,3 +54,5 @@ https://plugins.jetbrains.com/plugin/7332-android-parcelable-code-generator
 https://nsscreencast.com/episodes/367-dates-and-times
 
 https://stackoverflow.com/questions/57723295/curved-android-toolbar-with-shadow
+
+https://www.flaticon.com/free-icon/bill_1308494
