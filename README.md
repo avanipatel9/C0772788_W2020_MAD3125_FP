@@ -4,3 +4,7 @@
 ### Avani Patel
 # Project Description
 ##### Final project: A program that calculates the total bills of a customer. A bill could be for the internet, hydro or mobile usage. A customer may have multiple bills.
+
+# Project Output
+
+
