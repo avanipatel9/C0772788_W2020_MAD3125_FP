@@ -92,11 +92,6 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
             holder.llInternet.setVisibility(View.GONE);
 
         }
-        else
-        {
-            holder.txtTotalBillToPay.setText("This Customer has no bills");
-            holder.cardView.setVisibility(View.GONE);
-        }
 
 
     }
@@ -113,7 +108,6 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
         LinearLayout llInternet;
         LinearLayout llMobile;
 
-        TextView txtTotalBillToPay;
         TextView txtBillAmount;
         TextView txtBillDate;
         TextView txtBillType;
