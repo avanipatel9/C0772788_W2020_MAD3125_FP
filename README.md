@@ -5,6 +5,10 @@
 # Project Description
 ##### Final project: A program that calculates the total bills of a customer. A bill could be for the internet, hydro or mobile usage. A customer may have multiple bills.
 
+## Login Details:
+##### Username : admin@gmail.com
+##### Password : admin123
+
 # Project Output
 
 | Screenshot | Description |
@@ -32,3 +36,21 @@
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/adding_mobile_bill_correct_inputs.png)|Addnig new Mobile bill with correct details |
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/newly_added_mobile_bill.png)|Newly added Mobile bill will be displayed in the bill list after successful addition of it |
 |![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/after_logout.png)|On click of logout on any page it will redirect to Login page|
+
+# References
+
+https://flatuicolors.com
+
+https://www.coderzheaven.com/2014/10/09/change-title-subtitle-text-color-actionbar-android/
+
+https://developer.android.com/training/system-ui/status#java
+
+https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s02.html
+
+https://material.io/
+
+https://plugins.jetbrains.com/plugin/7332-android-parcelable-code-generator
+
+https://nsscreencast.com/episodes/367-dates-and-times
+
+https://stackoverflow.com/questions/57723295/curved-android-toolbar-with-shadow
