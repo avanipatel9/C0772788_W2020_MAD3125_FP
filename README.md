@@ -14,4 +14,5 @@
 | ![empty field login](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/empty_fields_validation.png) | Error will be diplayed for empty fields |
 |![toggle password](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/toggle_password.png)| Password show and hide feature|
 |![login with correct inputs](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/login_with_correct_input.png)|Login page with correct inputs and Remember Me Switch on|
-
+|![home page](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/Home_page_with_customer_list.png)|Home Page which displays list of customers with their Name, Email and Total Amount of all Bills|
+|![](https://github.com/avanipatel9/C0772788_W2020_MAD3125_FP/blob/master/Screenshots/home_page_customer_list.png)| Customer List continued|
