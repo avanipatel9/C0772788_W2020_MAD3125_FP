@@ -14,6 +14,9 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -60,6 +63,10 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                 {
                     edtCustomerId.setError("Please Enter Customer ID");
                 }
+                else if(!edtCustomerId.getText().toString().contains("C0"))
+                {
+                    edtCustomerId.setError("Customer ID should start with 'C0'. Ex. 'C005', 'C010'");
+                }
                 else if(edtFirstName.getText().toString().isEmpty())
                 {
                     edtFirstName.setError("Please Enter First Name");
@@ -71,6 +78,10 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                 else if(edtEmail.getText().toString().isEmpty())
                 {
                     edtEmail.setError("Please Enter Email ID");
+                }
+                else if(!isValidEmail(edtEmail.getText().toString()))
+                {
+                    edtEmail.setError("Enter valid Email ID");
                 }
                 else
                 {
@@ -84,5 +95,12 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean isValidEmail(String email)
+    {
+        Pattern pattern = Pattern.compile("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}");
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 }
